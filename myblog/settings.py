@@ -121,9 +121,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS=[
-    os.path.join(BASE_DIR,'static'),
-]
-STATIC_ROOT = os.path.join(BASE_DIR,'static')
+ if DEBUG:
+ 	STATICFILES_DIRS = [
+            os.path.join(BASE_DIR, 'static')
+       ]
+ else:
+ 	STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 db_from_env=dj_database_url.config()
 DATABASES['default'].update(db_from_env)
