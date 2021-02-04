@@ -125,8 +125,5 @@ STATICFILES_DIRS=[
     os.path.join(BASE_DIR,'static'),
 ]
 STATIC_ROOT = os.path.join(BASE_DIR,'static')
-    os.path.join(BASE_DIR,'static'),
-]
-STATIC_ROOT = os.path.join(BASE_DIR,'static')
 db_from_emv=dj_database_url.onfig()
 DATABASES['default'].update(db_from_env)
